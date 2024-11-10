@@ -2,8 +2,7 @@
 #include<string>
 #include<random>
 #include"AircraftResults.h"
-
-const double MSEC_PER_HR = 3600000;
+#include"Constants.h"
 
 class eVTOL_Aircraft
 {
@@ -40,17 +39,39 @@ public:
 	double GetCurrentBatteryCharge();
 	void DischargeBattery();
 	void ChargeBattery();
+	/// <summary>
+	/// Checks the aircraft for a fault. *Should only be run once per hour*
+	/// </summary>
 	void CheckForFault();
+	/// <summary>
+	/// Causes the aircraft to fly for one cycle at its cruise speed
+	/// </summary>
 	void Fly();
+	/// <summary>
+	/// Causes the aircraft to land, and triggers end of flight events.
+	/// </summary>
 	void EndFlight();
+	/// <summary>
+	/// Tells you whether or not the aircraft is currently charging or in line for a charger.
+	/// </summary>
+	/// <returns>whether or not the aircraft is currently in line OR charging.</returns>
 	bool IsCharging();
+	/// <summary>
+	/// Actually puts charge into the battery
+	/// </summary>
 	void Charge();
+	/// <summary>
+	/// Marks charging false. Could be expanded to reset a charger object.
+	/// </summary>
 	void DisconnectFromCharger();
 
 	/// <summary>
 	/// A quick function for printing the results.
 	/// </summary>
 	std::string PrintResults();
+	/// <summary>
+	/// Gets the results from the current aircraft.
+	/// </summary>
 	AircraftResults GetResults();
 
 private:
@@ -75,11 +96,30 @@ private:
 	/// <summary>
 	/// REGION: Statistics recorded for information purposes.
 	/// </summary>
+	
+	/// <summary>
+	/// How long the aircraft has been in the air
+	/// </summary>
 	double FlightTime;
+	/// <summary>
+	/// The number of flights *completed*. Does not count flights that did not complete.
+	/// </summary>
 	double NumberOfFlights;
+	/// <summary>
+	/// How long the aircraft has spent on the charger.
+	/// </summary>
 	double TimeCharging;
+	/// <summary>
+	/// How many times the aircraft has been *fully* charged. Does not count partial charges.
+	/// </summary>
 	double NumberOfTimesCharged;
+	/// <summary>
+	/// How many faults have occurred.
+	/// </summary>
 	double NumberOfFaults;
+	/// <summary>
+	/// How many miles the aircraft has flown times the number of passengers aboard.
+	/// </summary>
 	double PassengerMiles;
 
 };

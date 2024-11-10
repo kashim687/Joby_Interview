@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="AircraftResults.h" />
     <ClInclude Include="CompanyResults.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="eVTOL_Aircraft.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

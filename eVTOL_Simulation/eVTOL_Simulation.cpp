@@ -4,22 +4,10 @@
 #include <iostream>
 #include <deque>
 #include <map>
+#include "Constants.h"
 #include "eVTOL_Aircraft.h"
 #include "CompanyResults.h"
 #include "AircraftResults.h"
-/// <summary>
-/// A quick enumeration of all of the available companies. New companies can be added here.
-/// TODO: All possible vehicles should be read in via a CSS file instead, which would make this enumeration not needed.
-/// </summary>
-enum Companies
-{
-	Alpha = 0,
-	Bravo,
-	Charlie,
-	Delta,
-	Echo,
-	END
-};
 
 /// <summary>
 /// Creates a new aircraft and returns it
@@ -55,12 +43,11 @@ eVTOL_Aircraft* CreateCraft( Companies company )
 int main()
 {
 	//First, put all of the raw numbers in.
-	const int NUMBER_OF_AIRCRAFT = 20;
-	const long SIMULATION_DURATION_SEC = 10800;
-	const long SIMULATION_SPEED_MSEC = 1000;
-	const int NUMBER_OF_CHARGING_STATIONS = 20;
+	//The ChargingQueue is a deque of pointers that keeps track of who is in line for the chargers.
+	std::deque<eVTOL_Aircraft*> ChargingQueue;
 	std::vector<eVTOL_Aircraft> Aircraft;
 	std::map<std::string, CompanyResults> ResultsByCompany;
+	long Simulation_Time_msec = 0;
 
 	std::string CompanyNames[] = {"Alpha Company", "Bravo Company", "Charlie Company", "Delta Company", "Echo Company"};
 	//Note: These craft are created here because it seems largely preferable that we have at least one of each
@@ -77,15 +64,15 @@ int main()
 	{
 		Aircraft.push_back( *CreateCraft( Companies( rand() % int( Companies::END ) ) ) );
 	}
-	//Create the charging queue. Using a deque because it is possible that people could want to jump priority in some later version
-	//Also, this needs to be a queue of pointers because we want to not create additional objects by accident.
-	std::deque<eVTOL_Aircraft*> ChargingQueue;
+
 	//Now, actually run the simulation.
-	long Simulation_Time_msec = 0;
+	//TODO: This should not be in the main. In a smaller program of this kind, it is easiest to keep it here
+	//but if this program were to be expanded, this should be pushed out of the main.
+	//TODO: This could be threaded, but that is kind of outside the scope of this exercise.
 	while( !(Simulation_Time_msec > SIMULATION_DURATION_SEC * 1000) )
 	{
 		Simulation_Time_msec += SIMULATION_SPEED_MSEC;
-		if( Simulation_Time_msec % 3600000 == 0 )
+		if( Simulation_Time_msec % MSEC_PER_HR == 0 )
 		{
 			std::cout << "An Hour has passed" << std::endl;
 		}
@@ -114,7 +101,7 @@ int main()
 		//set to a low number, this should be inconsequential.
 		for( std::vector<eVTOL_Aircraft>::iterator it = Aircraft.begin(); it != Aircraft.end(); ++it )
 		{
-			if( (Simulation_Time_msec % 3600000) == 0 )
+			if( (Simulation_Time_msec % MSEC_PER_HR ) == 0 )
 			{
 				it->CheckForFault();
 			}
@@ -180,13 +167,3 @@ int main()
 
 	return 0;
 }
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
