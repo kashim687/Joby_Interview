@@ -1,0 +1,31 @@
+FUTURE Features:
+This document will contain ideas on how I would do this differently if the parameters were changed slightly, or if I were to do this project again. We always learn things about how we would do them better a second time, so those ideas will be here.
+
+Obviously this program is simplistic for the purposes of the interview, but when I look at it, there are a large amount of things that I would want to add:
+
+First, a LOT of assumptions are made around the passengers, who are really the primary focus of the program assuming that the purpose of a company is to make money, and the passengers are where the money is coming from. If the purpose of the program is to act as a scheduler simulation for these craft, then more real passengers and passenger simulation (that would obviously be far outside of the scope of this project) would be warranted.
+
+With this focus, I would also include time spent without passengers on board, returning to a charging station or travelling to pick up a new group of passengers. Further, not all passenger groups will fully occupy the vehicle, and some passenger groups may need a longer flight to get to their destination than some of the vehicles provide. Things like that would have to be considered in order to properly calculate passenger miles, and most likely passenger miles is the most important value being calculated.
+
+Ideas considered:
+
+I considered trying to add an acceleration/deceleration window for the aircraft, but a) the problem specifically told me not to do that, and b) it would have been extreme guesswork to try and figure out how long the craft would take to accelerate.
+
+I wanted to change the system to input/output from/to CSS files (they're easy to parse) but I decided that having the idea, recognizing that it was the better way to do things, and putting it here would be sufficient. I know that you are a Linux shop, and I am programming this on windows, so I didn't want file path issues if you decided to run this yourselves.
+
+I considered threading the simulation, having all of the aircraft running their calculations simultaneously. This would have been relatively easy to do, but I didn't for 2 reasons:
+Race conditions could have arisen that could actually have been beneficial (real aircraft operate independently, and would have real race conditions, so it would have made sense) but they would have added difficulty and uncertainty to the results, which I didn't want to do just in case you were checking the results against expected values.
+As the saying goes, "He who wants to thread has never threaded before."
+
+Testing:
+
+I did not write unit tests for this code. I know you specifically mentioned it in the problem, but I just didn't get a lot of time to do it. If you want me to rework this so you can see it, just let me know and I will switch to a CSS file and make sure to sanitize and write some unit tests.
+
+That said, I can absolutely quickly say what things I would check:
+Assuming that we were reading in from a CSS file, we would want to test things like an empty file, a malformed file, repeat company names, repeat aircraft names, companies with really long names, missing company names, missing aircraft information, etc.
+As the joke goes, "A programmer walks into a bar. He orders a beer. He orders 3 beers. He orders 0 beers. He orders -1 beers. He orders 999999 beers. He orders NULL beers. He orders f beers. He orders qwertyuiop beers. He orders ' ' beers. Testing Complete.
+A customer walks into the bar. He asks for a wine list. The bar bursts into flames."
+
+
+Futureproofing:
+I tried to add some future proofing to various parts of the program as I wrote. A lot of this is just handling the constants in one place to make it easier to add additional models and/or companies.

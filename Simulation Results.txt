@@ -1,0 +1,248 @@
+Results by aircraft:
+
+Company                 : Alpha Company
+Flight Time             : 6000000.000000
+Number of Flights       : 1.000000
+Time Charging           : 2064000.000000
+Number of times Charged : 0.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 800.000000
+
+Company                 : Bravo Company
+Flight Time             : 4800000.000000
+Number of Flights       : 2.000000
+Time Charging           : 721000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 666.666667
+
+Company                 : Charlie Company
+Flight Time             : 4502000.000000
+Number of Flights       : 2.000000
+Time Charging           : 2882000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 600.266667
+
+Company                 : Delta Company
+Flight Time             : 6001000.000000
+Number of Flights       : 1.000000
+Time Charging           : 0.000000
+Number of times Charged : 0.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 300.050000
+
+Company                 : Echo Company
+Flight Time             : 6208000.000000
+Number of Flights       : 2.000000
+Time Charging           : 1081000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 1.000000
+Passenger Miles         : 103.466667
+
+Company                 : Bravo Company
+Flight Time             : 4800000.000000
+Number of Flights       : 2.000000
+Time Charging           : 721000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 1.000000
+Passenger Miles         : 666.666667
+
+Company                 : Charlie Company
+Flight Time             : 4502000.000000
+Number of Flights       : 2.000000
+Time Charging           : 2882000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 1.000000
+Passenger Miles         : 600.266667
+
+Company                 : Echo Company
+Flight Time             : 6208000.000000
+Number of Flights       : 2.000000
+Time Charging           : 1081000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 2.000000
+Passenger Miles         : 103.466667
+
+Company                 : Alpha Company
+Flight Time             : 6000000.000000
+Number of Flights       : 1.000000
+Time Charging           : 2064000.000000
+Number of times Charged : 0.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 800.000000
+
+Company                 : Echo Company
+Flight Time             : 5169000.000000
+Number of Flights       : 1.000000
+Time Charging           : 1081000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 86.150000
+
+Company                 : Echo Company
+Flight Time             : 5169000.000000
+Number of Flights       : 1.000000
+Time Charging           : 1081000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 1.000000
+Passenger Miles         : 86.150000
+
+Company                 : Delta Company
+Flight Time             : 6001000.000000
+Number of Flights       : 1.000000
+Time Charging           : 0.000000
+Number of times Charged : 0.000000
+Number of Faults        : 1.000000
+Passenger Miles         : 300.050000
+
+Company                 : Delta Company
+Flight Time             : 6001000.000000
+Number of Flights       : 1.000000
+Time Charging           : 0.000000
+Number of times Charged : 0.000000
+Number of Faults        : 2.000000
+Passenger Miles         : 300.050000
+
+Company                 : Charlie Company
+Flight Time             : 4502000.000000
+Number of Flights       : 2.000000
+Time Charging           : 2882000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 600.266667
+
+Company                 : Echo Company
+Flight Time             : 4810000.000000
+Number of Flights       : 1.000000
+Time Charging           : 1081000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 1.000000
+Passenger Miles         : 80.166667
+
+Company                 : Alpha Company
+Flight Time             : 6000000.000000
+Number of Flights       : 1.000000
+Time Charging           : 1705000.000000
+Number of times Charged : 0.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 800.000000
+
+Company                 : Alpha Company
+Flight Time             : 6000000.000000
+Number of Flights       : 1.000000
+Time Charging           : 0.000000
+Number of times Charged : 0.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 800.000000
+
+Company                 : Bravo Company
+Flight Time             : 4800000.000000
+Number of Flights       : 2.000000
+Time Charging           : 721000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 666.666667
+
+Company                 : Charlie Company
+Flight Time             : 4502000.000000
+Number of Flights       : 2.000000
+Time Charging           : 2882000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 600.266667
+
+Company                 : Bravo Company
+Flight Time             : 4800000.000000
+Number of Flights       : 2.000000
+Time Charging           : 721000.000000
+Number of times Charged : 1.000000
+Number of Faults        : 0.000000
+Passenger Miles         : 666.666667
+
+Results by company:
+
+Results for Alpha Company
+
+Number of Aircraft Simulated 4
+Total Flight Time (hours)    6.66667
+Number of Faults             0
+Number of Flights Completed  4
+Number of Charges Completed  0
+Passenger Miles              3200
+Total Charging Time (hours)  1.62028
+
+Average Flight Time (hours)  1.66667
+Average Faults               0
+Average Flights Completed    1
+Average Charges Completed    0
+Average Passenger Miles      800
+Average Charging Time (hours)0.405069
+
+Results for Bravo Company
+
+Number of Aircraft Simulated 4
+Total Flight Time (hours)    5.33333
+Number of Faults             1
+Number of Flights Completed  8
+Number of Charges Completed  4
+Passenger Miles              2666.67
+Total Charging Time (hours)  0.801111
+
+Average Flight Time (hours)  1.33333
+Average Faults               0.25
+Average Flights Completed    2
+Average Charges Completed    1
+Average Passenger Miles      666.667
+Average Charging Time (hours)0.200278
+
+Results for Charlie Company
+
+Number of Aircraft Simulated 4
+Total Flight Time (hours)    5.00222
+Number of Faults             1
+Number of Flights Completed  8
+Number of Charges Completed  4
+Passenger Miles              2401.07
+Total Charging Time (hours)  3.20222
+
+Average Flight Time (hours)  1.25056
+Average Faults               0.25
+Average Flights Completed    2
+Average Charges Completed    1
+Average Passenger Miles      600.267
+Average Charging Time (hours)0.800556
+
+Results for Delta Company
+
+Number of Aircraft Simulated 3
+Total Flight Time (hours)    5.00083
+Number of Faults             3
+Number of Flights Completed  3
+Number of Charges Completed  0
+Passenger Miles              900.15
+Total Charging Time (hours)  0
+
+Average Flight Time (hours)  1.66694
+Average Faults               1
+Average Flights Completed    1
+Average Charges Completed    0
+Average Passenger Miles      300.05
+Average Charging Time (hours)0
+
+Results for Echo Company
+
+Number of Aircraft Simulated 5
+Total Flight Time (hours)    7.65667
+Number of Faults             5
+Number of Flights Completed  7
+Number of Charges Completed  5
+Passenger Miles              459.4
+Total Charging Time (hours)  1.50139
+
+Average Flight Time (hours)  1.53133
+Average Faults               1
+Average Flights Completed    1.4
+Average Charges Completed    1
+Average Passenger Miles      91.88
+Average Charging Time (hours)0.300278

@@ -1,1 +1,26 @@
 This repository is the home to the Joby interview problem presented to me by Joby Aviation.
+
+This README file will act as notes for a presentation on the code written here.
+First: The results of one of the simulations is contained within the Simulation Results.txt file in this folder. It contains results by aircraft and by company, including several things that you didn't ask me to track, but which were important to track to verify that other numbers were correct anyway. I figured this debug output would be useful to you. Please note that the aircraft results time units are in milliseconds, which is why the numbers are so high.
+
+Second: One thing I noticed is that due to the limited time frame of the simulation, very few craft actually got a chance to charge, and particularly some companies' batteries held out long enough that the line for the charger was too long by the time they discharged, so they never got a second flight. I did verify that the charging queue is working though.
+
+Third; a quick overview of the basic files:
+
+Constants.h contains just a couple of constants and handy numbers. 
+AircraftResults and CompanyResults are just forms to store those kinds of results. 
+This makes an easy single place to store those, and allows for relatively easy addition of additional statistics to be tracked.
+
+eVTOL_Aircraft provides an object oriented approach to representing one eVTOL aircraft. It provides a single place to accomplish all changes made to the craft during flight, as well as storage for the statistics. The reason it does NOT use an AircraftResults object to store the results data is to decouple the classes a bit, and provide for the possibility of more translation and processing that may have to happen later. The class is separated into regions the way that C# would do it, just to maintain clarity. All members are protected by access methods.
+
+eVTOL_Simulation contains the core of the simulation. Obviously if this were a full professional program, I would not put all of the processing in main(), but for something like this which is more proof of concept, it's a lot easier to pump out a minimum-viable-product that way.
+This class contains most of the small assumptions that I had to make in order to complete the project. These include:
+That we should simulate at least one of every aircraft in a given simulation
+
+The way the simulation is structured is to run the simulation in run-time-increments of milliseconds determined by the SIMULATION_SPEED_MSEC. Right now, since you asked for 3 hours worth of simulation, I decided to run it using 1 second RTIs, but I left open the capability for it to be run much more granularly.
+
+Since the fault probability was presented per hour, and probability is not easily split into smaller increments, I did have to just put in a block that watches for once per hour and checks for faults. It isn't my favorite solution, but since "fault" is very over-simplified already, I did it this way to make sure I got the odds right.
+
+The charging queue is handled as a deque of aircraft pointers but it handled as FIFO (mostly). The reason for using a deque instead of a normal queue is multi-reason:
+There is no way to guarantee that the first aircraft that arrives is going to be the first one to get done charging, and in fact the numbers given imply that this might happen relatively often.
+I could very easily foresee a future feature wanting to have "high priority" charging for some craft, or wanting to use an algorithm to determine the most efficient way of handling charging.
